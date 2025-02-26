@@ -8,19 +8,19 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 <style type="text/css">
-.container{
+.container-fluid{
  margin-top: 50px;
 }
 .row{
   margin: opx auto;
-  width: 960px;
+  width: 100%;
 }
 p{
    overflow: hidden;
    white-space: nowrap;
    text-overflow: ellipsis;
 }
-img:hover {
+img:hover,a:hover {
    cursor: pointer
 }
 /* 문서 객체 선택 => 351page
@@ -40,7 +40,7 @@ img:hover {
 </head>
 <body>
 
-  <div class="container">
+  <div class="container-fluid">
     <div class="row">
     <input type=text id="fd" size=20 class="input-sm">
     <input type=button id="btn" value="검색" class="btn-sm btn-success"
@@ -48,11 +48,24 @@ img:hover {
     >
     </div>
     <div class="row" style="margin-top: 20px">
-      <div class="col-sm-8" id="poster">
+      <div class="col-sm-6" id="poster">
         
       </div>
-      <div class="col-sm-4" id="detail" style="display:none">
-       
+      <div class="col-sm-6" id="detail" style="display:none">
+       <table class="table">
+        <tr> 
+         <td width=30% class="text-center" rowspan="8" id="poster1">
+         </td>
+         <td colstpan="2">
+          <h3><span id="title"></span>&nbsp<span id="score"></span></h3>
+         </td>
+        </tr>
+       </table>
+       <table class="table">
+         <tr>
+           <td></td>
+         </tr>
+       </table>
       </div>
     </div>
     <div class="row" style="margin-top: 10px">
