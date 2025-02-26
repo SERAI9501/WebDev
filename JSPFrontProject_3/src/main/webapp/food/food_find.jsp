@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,55 +12,16 @@
  margin-top: 50px;
 }
 .row{
-  margin: 0px auto;
+  margin: opx auto;
   width: 960px;
 }
-P{
-	overflow: hidden;
-	white-space:nowrap;
-	text-overflow: ellipsis;
+p{
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
 }
-img:hover{
-	cursor: pointer
-}
-</style>
-<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script type="text/javascript">
-let food_list=[]
-let startPage=0
-let endPage=0
-let curpage=0
-let totalpage=0
-//시작과 동시에 값을 읽어 온다
-window.onload=function(){
-	let html='';
-	// axios.get() axios.post()
-	axios.get('http://localhost/JSPFrontProject_3/food/find_js.do')
-	.then((response)=>{
-		console.log(response.data)
-		food_list=response.data
-		curpage=response.data[0].curpage
-		totalpage=response.data[0].totalpage
-		startPage=response.data[0].startPage
-		endPage=response.data[0].endPage
-		
-		console.log("curpage="+curpage)
-		console.log("totalpage="+totalpage)
-		console.log("startPage="+startPage)
-		console.log("endPage="+endPage)
-		
-		food_list.map(function(vo){
-			html+='<div class="col-sm-4">'
-			     +'<div class="thumbnail">'
-			     +'<img src="'+vo.poster+'" style="width:100%" onclick="detail('+vo.fno+')">'
-			     +'<p>'+vo.name+'</p>'
-			     +'</div>'
-			     +'</div>'
-		}) 
-		let main=document.querySelector("#poster");
-		// CSS selector 
-		main.innerHTML=html
-  })
+img:hover {
+   cursor: pointer
 }
 /* 문서 객체 선택 => 351page
  * document.querySelector("#fd") => id
@@ -72,80 +34,12 @@ window.onload=function(){
    => document.getElementByTagName("div")  위 아래 둘 다 사용가능 위버전이 더 범위가 넓어서 사용하기 편하다
    => $('div')
  */
- function foodFind(){
-		let addr=document.querySelector("#fd").value
-		// document.getElementById("fd")
-		if(addr.trim()=="")
-		{
-			alert("지역을 입력하세요")
-			document.querySelector("#fd").focus()
-			return
-		}
-		let html='';
-		// axios.get() axios.post()
-		// .do?page=1&fd=서대문
-		// request.getParameter("page")
-		// request.getParameter("fd")
-		/*
-		   ajax({
-			 url:'',
-			 type:'POST',
-			 data:{page:1,fd:addr},
-			 success:function(response)
-			 {
-				 
-			 }
-			 
-		   })
-		   
-		   => ajax (jquery)
-		*/
-		// axios = vue , react 
-		axios.get('http://localhost/JSPFrontProject_3/food/find_js.do',{
-			params:{
-				page:1,
-				fd:addr
-			}
-		})
-		.then((response)=>{
-			console.log(response.data)
-			food_list=response.data
-			curpage=response.data[0].curpage
-			totalpage=response.data[0].totalpage
-			startPage=response.data[0].startPage
-			endPage=response.data[0].endPage
-			
-			console.log("curpage="+curpage)
-			console.log("totalpage="+totalpage)
-			console.log("startPage="+startPage)
-			console.log("endPage="+endPage)
-			
-			food_list.map(function(vo){
-				html+='<div class="col-sm-4">'
-				     +'<div class="thumbnail">'
-				     +'<img src="'+vo.poster+'" style="width:100%">'
-				     +'<p>'+vo.name+'</p>'
-				     +'</div>'
-				     +'</div>'
-			}) 
-			let main=document.querySelector("#poster");
-			// CSS selector 
-			main.innerHTML=html
-		})
-		
-	}
-   let detail=(fno)=>{
-		axios.get("http://localhost/JSPFrontProject_3/food/detail_js.do",{
-			params:{
-				fno:fno
-			}
-		}).then((res)=>{
-			console.log(res.data)
-		})
-	}
-</script>
+</style>
+<script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script type="text/javascript" src="food.js"></script>
 </head>
 <body>
+
   <div class="container">
     <div class="row">
     <input type=text id="fd" size=20 class="input-sm">
