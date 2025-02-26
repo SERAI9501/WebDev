@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -23,23 +22,12 @@ p{
 img:hover,a:hover {
    cursor: pointer
 }
-/* 문서 객체 선택 => 351page
- * document.querySelector("#fd") => id
-   => document.getElementById("id") 위 아래 둘 다 사용가능 위버전이 더 범위가 넓어서 사용하기 편하다
-   => $('#fd') 나중에 이렇게 바뀐다
- * document.querySelector(".fd") => class
-   => document.getElementClassName("fd") 위 아래 둘 다 사용가능 위버전이 더 범위가 넓어서 사용하기 편하다
-   => $('.fd')
- * document.querySelector("div") => 태그명
-   => document.getElementByTagName("div")  위 아래 둘 다 사용가능 위버전이 더 범위가 넓어서 사용하기 편하다
-   => $('div')
- */
+
 </style>
 <script type="text/javascript" src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script type="text/javascript" src="food.js"></script>
 </head>
 <body>
-
   <div class="container-fluid">
     <div class="row">
     <input type=text id="fd" size=20 class="input-sm">
@@ -52,20 +40,49 @@ img:hover,a:hover {
         
       </div>
       <div class="col-sm-6" id="detail" style="display:none">
-       <table class="table">
-        <tr> 
-         <td width=30% class="text-center" rowspan="8" id="poster1">
-         </td>
-         <td colstpan="2">
-          <h3><span id="title"></span>&nbsp<span id="score"></span></h3>
-         </td>
-        </tr>
-       </table>
-       <table class="table">
-         <tr>
-           <td></td>
-         </tr>
-       </table>
+        <table class="table">
+          <tr>
+           <td width=30% class="text-center" rowspan="8" id="poster1">
+             
+           </td>
+           <td colspan="2">
+            <h3><span id="title"></span>&nbsp<span id="score" style="color:orange"></span></h3>
+           </td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">음식종류</td>
+            <td width=55% id="type"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">주소</td>
+            <td width=55% id="address"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">전화</td>
+            <td width=55% id="phone"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">가격대</td>
+            <td width=55% id="price"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">주차</td>
+            <td width=55% id="parking"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">영업시간</td>
+            <td width=55% id="time"></td>
+          </tr>
+          <tr>
+            <td width=15% style="color:gray">테마</td>
+            <td width=55% id="theme"></td>
+          </tr>
+        </table>
+        <table class="table">
+          <tr>
+            <td id="content"></td>
+          </tr>
+        </table>
       </div>
     </div>
     <div class="row" style="margin-top: 10px">
