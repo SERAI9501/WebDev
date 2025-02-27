@@ -12,8 +12,7 @@ $(function(){
 	// nth-child(1) 1번부터 시작
 	$('span:eq(0)').text("Hello JQuery")
 	// textContent는 순수하게 문자열로만 취급한다.
-	$('span:eq(1)').html("<font color=red></font>")
-	$('span:eq(1)').val()
+	$('span:eq(1)').html("<font color=red>아이디를 입력하시오</font>")
 	// 위에 것 innerHTML
 	//$('span:nth-child(1)').text("Hello JQuery")
 	// appendChild() => append()
@@ -25,7 +24,7 @@ $(function(){
   
   </span><br>
   <span>
-	아이디를 입력하시오
+  
   </span>
 </body>
 </html>
