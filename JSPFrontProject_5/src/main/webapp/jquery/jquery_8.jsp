@@ -19,46 +19,47 @@
 <script type="text/javascript">
 let fileIndex=0
 $(function(){
-	
-	//밑에 2개는 동일한 코딩이나 선택은 자유
-	$('.vtn-warning').click(function(){
+	$('.btn-warning').click(function(){
 		$('.user-table tbody').append(
 		  '<tr id="m'+(fileIndex)+'">'
-		  +'<td>File '+<fileIndex+1>+'<input type=file size=20></td>'
-		  +'</tr>')
+		 +'<td>File '+(fileIndex+1)+'<input type=file size=20></td>'
+		 +'</tr>'
+		)
 		fileIndex++
 	})
+	
 	$('.btn-info').on('click',function(){
 		if(fileIndex>0)
-			{
-			   $('#m'+(fileIndex-1)).remove()
-			   fileIndex--
-			}
+		{
+			$('#m'+(fileIndex-1)).remove()
+			fileIndex--
+		}
 	})
 })
 </script>
 </head>
 <body>
- <div class="container">
-  <div class="row">
-   <table class="table">
-   <tr>
-    <td class="text-right" colspan="2">
-    <input type=button value="add" class="btn-xs btn-warning">
-    <input type=button value="remove" class="btn-xs btn-info">
-    </td>
-   </tr>
-    <tr>
-     <th width=15%>첨부파일</th>
-     <td width=85%></td>
-      <table class="table user-table">
-       <tbody>
-        
-       </tbody>
+  <div class="container">
+    <div class="row">
+      <table class="table">
+       <tr>
+         <td class="text-right" colspan="2">
+           <input type=button value="add" class="btn-xs btn-warning">
+           <input type=button value="remove" class="btn-xs btn-info">
+         </td>
+       </tr>
+       <tr>
+         <th width=15%>첨부파일</th>
+         <td width=85%>
+           <table class="table user-table">
+            <tbody>
+              
+            </tbody>
+           </table>
+         </td>
+       </tr>
       </table>
-    </tr>
-   </table>
+    </div>
   </div>
- </div>
 </body>
 </html>
