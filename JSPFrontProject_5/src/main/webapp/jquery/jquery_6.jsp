@@ -19,8 +19,7 @@
 <script type="text/javascript">
 /*
  *  이벤트
-       => 함수 호출 / 아래 두 가지중 하나를 선택한다.
-       
+       => 함수 호출 / 아래 두 가지중(고전,이벤트) 하나를 선택한다.       
        let btn=document.querySelector("#id")
        btn.onclick=function(){}
         $('#id명').click(function(){})

@@ -46,6 +46,9 @@ $(function(){ // $(document).ready(function(){}) <=예전버전
 		})
 	},function(){
 		$(this).css('opacity',1.0)
+		$(this).css({
+			'whidth':'250px',
+			'height':'300px'
 	})
 })
 </script>
