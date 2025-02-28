@@ -12,7 +12,7 @@
 }
 .row{
   margin: 0px auto;
-  width: 600px;
+  width: 350px;
 }
 </style>
 <script type="text/javascript" src="http://code.jquery.com/jquery.js"></script>
@@ -50,7 +50,7 @@ $(function(){
              태그.style.display='none' => hide()
     => 태그를 제어하는 프로그램 (DOMScript)
         => 기타 : 효과 fadeIn fadeOut
- */
+*/
 </script>
 </head>
 <body>
