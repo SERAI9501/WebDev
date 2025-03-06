@@ -1,8 +1,8 @@
 package com.sist.vo;
 
 public class FoodVO {
-	private int fno;
-	private String name,poster;
+    private int fno;
+    private String name,poster;
 	public int getFno() {
 		return fno;
 	}
@@ -21,5 +21,5 @@ public class FoodVO {
 	public void setPoster(String poster) {
 		this.poster = poster;
 	}
-	
+  
 }
