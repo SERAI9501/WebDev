@@ -41,7 +41,7 @@
             <div class="row" style="width:800px;margin:0px auto">
              
              <table class="table">
-              <tr>
+              <tr class="table-danger">
                 <th width=10% class="text-center">번호</th>
                 <th width=45% class="text-center">제목</th>
                 <th width=15% class="text-center">이름</th>

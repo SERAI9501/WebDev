@@ -31,13 +31,12 @@
   WHERE no=#{no}
  </select>
  <update id="noticeUpdate" parameterType="NoticeVO">
-  UPDATE project_notice SET
-  type=#{type},subject=#{subject},content=#{content}
-  WHERE no=#{no}
+   UPDATE project_notice SET
+   type=#{type},subject=#{subject},content=#{content}
+   WHERE no=#{no}
  </update>
  <delete id="noticeDelete" parameterType="int">
-  DELETE FROM project_notice
-  WHERE no=#{no}
+   DELETE FROM project_notice
+   WHERE no=#{no}
  </delete>
-  <!--  user -->
 </mapper>

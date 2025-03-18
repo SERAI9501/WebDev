@@ -22,10 +22,11 @@ $(function(){
 </script>
 </head>
 <body>
+<form method=post action="../admin/notice_delete.do">
 <table class="table">
               <tr>
                <td>
-                <a href="../admin/notice_delete.do" class="btn btn-danger btn-sm">새글</a>
+                <a href="../admin/notice_insert.do" class="btn btn-danger btn-sm">새글</a>
                </td>
               </tr>
              </table>
@@ -39,7 +40,9 @@ $(function(){
               </tr>
                 <tr>
                   <td colspan="5">
-                   <input type="checkbox" value="all">전체선택
+                   <input type="checkbox" value="all" id="all">전체선택
+                   &nbsp;
+                   <input type=submit value="삭제" class="btn-sm btn-danger">
                   </td>
                 </tr>
               <c:set var="count" value="${count }"/>
@@ -58,13 +61,6 @@ $(function(){
              </table>
              <table class="table">
                <tr>
-                <td class="text-left">
-                 <input type="checkbox" name=fs value="N">이름
-                 <input type="checkbox" name=fs value="S">제목
-                 <input type="checkbox" name=fs value="C">내용
-                 <input type=text name=ss size=15 class="input-sm">
-                 <input type=button value="검색" class="btn-primary btn-sm">
-                </td>
                 <td class="text-right">
                  <a href="../admin/notice_list.do?page=${curpage>1?curpage-1:curpage }" class="btn btn-info btn-sm">이전</a>
                   ${curpage } page / ${totalpage } pages
@@ -72,5 +68,6 @@ $(function(){
                 </td>
                </tr>
              </table>
+           </form>
 </body>
 </html>

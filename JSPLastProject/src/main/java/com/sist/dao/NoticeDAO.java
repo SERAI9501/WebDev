@@ -80,10 +80,15 @@ public class NoticeDAO {
  	  return vo;
    }
    /*
-    * <delete id="noticeDelete" parameterType="int">
-  DELETE FROM project_notice
-  WHERE no=#{no}
- </delete>
+    *   <update id="noticeUpdate" parameterType="NoticeVO">
+		   UPDATE project_notice SET
+		   type=#{type},subject=#{subject},content=#{content}
+		   WHERE no=#{no}
+		 </update>
+		 <delete id="noticeDelete" parameterType="int">
+		   DELETE FROM project_notice
+		   WHERE no=#{no}
+		 </delete>
     */
    public static void noticeUpdate(NoticeVO vo)
    {
@@ -94,7 +99,7 @@ public class NoticeDAO {
    public static void noticeDelete(int no)
    {
 	   SqlSession session=ssf.openSession(true);
-	   session.update("noticeDelete",no);
+	   session.delete("noticeDelete",no);
 	   session.close();
    }
 }

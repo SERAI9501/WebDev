@@ -119,6 +119,8 @@ public class BoardModel {
    public String board_update(HttpServletRequest request,
 		   HttpServletResponse response)
    {
+	   // public String board_update(int no,int page,Model model)
+	   //                            BoardVO vo
 	   String no=request.getParameter("no");
 	   String page=request.getParameter("page");
 	   BoardVO vo=BoardDAO.boardUpdateData(Integer.parseInt(no));
@@ -132,6 +134,7 @@ public class BoardModel {
    public String board_update_ok(HttpServletRequest request,
 		   HttpServletResponse response)
    {
+	   // invoke(obj,request,response)
 	   String name=request.getParameter("name");
 	   String subject=request.getParameter("subject");
 	   String content=request.getParameter("content");
@@ -160,8 +163,10 @@ public class BoardModel {
 	   request.setAttribute("res", res);
 	   request.setAttribute("page", page);
 	   request.setAttribute("no", no);
-	   
 	   return "../board/board_update_ok.jsp";
    }
-   
 }
+
+
+
+

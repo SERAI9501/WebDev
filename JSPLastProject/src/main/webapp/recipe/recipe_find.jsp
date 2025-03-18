@@ -39,16 +39,16 @@
     <!-- ****** Archive Area Start ****** -->
     <section class="archive-area section_padding_80">
         <div class="container">
-        	<div class="row">
-        <form method=post action="../recipe/recipe_find.do">
-          <input type="checkbox" name="fs" value="T" checked>레시피명
-          <input type="checkbox" name="fs" value="C">쉐프명
-          <input type="text" name="ss" size=15 class="form-control-sm">
-          <input type=submit value="검색" class="btn btn-sm btn-outline-danger">
-        </form>
-        </div>
             <div class="row">
-			
+            <form method=post action="../recipe/recipe_find.do">
+              <input type="checkbox" name="fs" value="T" checked>레시피명
+              <input type="checkbox" name="fs" value="C">쉐프명
+              <input type=text name="ss" size=15 class="form-control-sm">
+              <input type=submit value="검색" class="btn btn-sm btn-outline-danger">
+            </form>
+            </div>
+            <div class="row" style="margin-top: 20px">
+
                 <!-- Single Post -->
                 <c:forEach var="vo" items="${list }">
                 <div class="col-12 col-md-6 col-lg-4">
@@ -56,7 +56,7 @@
                         <!-- Post Thumb -->
                         <div class="post-thumb">
                           <a href="#">
-                            <img src="${vo.poster }" alt="">
+                            <img src="${vo.poster }" style="width:350px;height: 250px ">
                           </a>
                         </div>
                         <!-- Post Content -->
@@ -95,8 +95,8 @@
                     </div>
                 </div>
                 </c:forEach>
-                <!-- 
-                <div class="col-12">
+                
+                <!-- <div class="col-12">
                     <div class="pagination-area d-sm-flex mt-15">
                         <nav aria-label="#">
                             <ul class="pagination">
@@ -121,8 +121,8 @@
                             <p>Page ${curpage } of ${totalpage } results</p>
                         </div>
                     </div>
-                </div>
- -->
+                </div>-->
+
             </div>
         </div>
     </section>
