@@ -10,20 +10,7 @@
 <script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript" src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script type="text/javascript">
-Shadowbox.init({
-	players:['iframe']
-})
 $(function(){
-	$('#idBtn').on('click',function(){
-		Shadowbox.open({
-			content:'../member/idcheck.do',
-			player:'iframe',
-			width:370,
-			height:250,
-			title:'아이디 중복체크'
-		})
-	})
-	
 	$('#postBtn').click(function(){
 		new daum.Postcode({
 			oncomplete:function(data)
