@@ -20,4 +20,4 @@ location.href="main/main.do"
 <body>
 
 </body>
-</html>	
+</html>

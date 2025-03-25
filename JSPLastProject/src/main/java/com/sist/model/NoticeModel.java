@@ -160,6 +160,6 @@ public class NoticeModel {
 		  NoticeDAO.noticeDelete(Integer.parseInt(no));
 	  }
 	  return "redirect:../admin/notice_list.do";
-  }
+  }	
   
 }
